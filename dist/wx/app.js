@@ -18,7 +18,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 __WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */].mpType = 'app';
 
-var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */]);
+const app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */]);
 app.$mount();
 
 /***/ }),
@@ -86,7 +86,7 @@ if (false) {(function () {
 "use strict";
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  created: function created() {
+  created() {
     // 调用API从本地缓存中获取数据
     /*
      * 平台 api 差异的处理方式:  api 方法统一挂载到 mpvue 名称空间, 平台判断通过 mpvuePlatform 特征字符串
@@ -96,7 +96,7 @@ if (false) {(function () {
      * 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
      */
 
-    var logs = void 0;
+    let logs;
     if (global.mpvuePlatform === 'my') {
       logs = global.mpvue.getStorageSync({ key: 'logs' }).data || [];
       logs.unshift(Date.now());
@@ -110,8 +110,8 @@ if (false) {(function () {
       global.mpvue.setStorageSync('logs', logs);
     }
   },
-  log: function log() {
-    console.log('log at:' + Date.now());
+  log() {
+    console.log(`log at:${Date.now()}`);
   }
 });
 

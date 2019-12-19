@@ -27,7 +27,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.errorHandler = function (err)
   }
 };
 
-var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
+const app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
 app.$mount();
 
 /***/ }),
@@ -133,7 +133,7 @@ if (false) {(function () {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  data: function data() {
+  data() {
     return {
       motto: 'Hello miniprograme',
       userInfo: {
@@ -143,27 +143,26 @@ if (false) {(function () {
     };
   },
 
-
   components: {
     card: __WEBPACK_IMPORTED_MODULE_0__components_card__["a" /* default */]
   },
 
   methods: {
-    bindViewTap: function bindViewTap() {
-      var url = '../logs/main';
+    bindViewTap() {
+      const url = '../logs/main';
       if (global.mpvuePlatform === 'wx') {
-        global.mpvue.switchTab({ url: url });
+        global.mpvue.switchTab({ url });
       } else {
-        global.mpvue.navigateTo({ url: url });
+        global.mpvue.navigateTo({ url });
       }
     },
-    clickHandle: function clickHandle(ev) {
+    clickHandle(ev) {
       console.log('clickHandle:', ev);
       // throw {message: 'custom test'}
     }
   },
 
-  created: function created() {
+  created() {
     // let app = getApp()
   }
 });

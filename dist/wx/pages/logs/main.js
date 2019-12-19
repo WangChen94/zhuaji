@@ -28,7 +28,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
+const app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a(__WEBPACK_IMPORTED_MODULE_1__index__["a" /* default */]);
 app.$mount();
 
 /***/ }),
@@ -124,22 +124,21 @@ if (false) {(function () {
     card: __WEBPACK_IMPORTED_MODULE_1__components_card__["a" /* default */]
   },
 
-  data: function data() {
+  data() {
     return {
       logs: [],
       imgUrls: ['http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/newsPicture/05558951-de60-49fb-b674-dd906c8897a6', 'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/coursePicture/0fbcfdf7-0040-4692-8f84-78bb21f3395d', 'http://mss.sankuai.com/v1/mss_51a7233366a4427fa6132a6ce72dbe54/management-school-picture/7683b32e-4e44-4b2f-9c03-c21f34320870']
     };
   },
-  created: function created() {
-    var logs = void 0;
+
+  created() {
+    let logs;
     if (global.mpvuePlatform === 'my') {
       logs = global.mpvue.getStorageSync({ key: 'logs' }).data || [];
     } else {
       logs = global.mpvue.getStorageSync('logs') || [];
     }
-    this.logs = logs.map(function (log) {
-      return Object(__WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* formatTime */])(new Date(log));
-    });
+    this.logs = logs.map(log => Object(__WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* formatTime */])(new Date(log)));
   }
 });
 
@@ -150,28 +149,28 @@ if (false) {(function () {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = formatTime;
 function formatNumber(n) {
-  var str = n.toString();
-  return str[1] ? str : '0' + str;
+  const str = n.toString();
+  return str[1] ? str : `0${str}`;
 }
 
 function formatTime(date) {
-  var year = date.getFullYear();
-  var month = date.getMonth() + 1;
-  var day = date.getDate();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
 
-  var hour = date.getHours();
-  var minute = date.getMinutes();
-  var second = date.getSeconds();
+  const hour = date.getHours();
+  const minute = date.getMinutes();
+  const second = date.getSeconds();
 
-  var t1 = [year, month, day].map(formatNumber).join('/');
-  var t2 = [hour, minute, second].map(formatNumber).join(':');
+  const t1 = [year, month, day].map(formatNumber).join('/');
+  const t2 = [hour, minute, second].map(formatNumber).join(':');
 
-  return t1 + ' ' + t2;
+  return `${t1} ${t2}`;
 }
 
 /* unused harmony default export */ var _unused_webpack_default_export = ({
-  formatNumber: formatNumber,
-  formatTime: formatTime
+  formatNumber,
+  formatTime
 });
 
 /***/ }),
