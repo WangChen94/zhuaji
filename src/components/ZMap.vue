@@ -6,9 +6,9 @@
      subkey="4ALBZ-OYRW4-XVQUN-DZAIB-5OLDT-BFFJF"
      :show-compass="true"
      scale="17"
-     bindcontroltap="controltap"
-     bindmarkertap="markertap"
-     bindregionchange="regionchange"
+     @markertap="markerClickEvent"
+     @regionchange="mapViewChange"
+     @end="end"
      show-location
      :style="mapStyle"/>
 </template>
@@ -63,6 +63,18 @@ export default {
   mounted() {
     this.$map = wx.createMapContext('map', this);
     this.viewSize.height = `${wx.getSystemInfoSync().windowHeight  }px`;
+  },
+  methods: {
+    markerClickEvent(info) {
+      console.log(info);
+    },
+    mapClickEvent(info) {
+      console.log(info);
+    },
+    end (event) {
+      console.log('in end');
+      console.log(event);
+    }
   }
 }
 </script>
