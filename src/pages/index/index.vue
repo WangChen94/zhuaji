@@ -2,10 +2,11 @@
   <div>
     <z-map :mapConfig="mapConfig"/>
     <div class="tab-bar">
-      <div class="tab">首页</div>
-      <div class="tab">首页</div>
-      <div class="tab">首页</div>
-      <div class="tab">首页</div>
+      <div class="tab">结伴</div>
+      <div class="tab">上门</div>
+      <div class="tab">社区</div>
+      <div class="tab">消息</div>
+      <div class="tab">我的</div>
     </div>
   </div>
 </template>
@@ -55,5 +56,9 @@ export default {
     flex: 1;
     text-align: center;
     background: #ffffff;
+    font-family: PingFangSC-Medium;
+    font-size: 11px;
+    color: #222222;
+    letter-spacing: -0.07px;
   }
 </style>
