@@ -4,7 +4,6 @@
      :longitude="mapCenter.longitude"
      :latitude="mapCenter.latitude"
      subkey="4ALBZ-OYRW4-XVQUN-DZAIB-5OLDT-BFFJF"
-     :show-compass="true"
      scale="17"
      @markertap="markerClickEvent"
      @regionchange="mapViewChange"
